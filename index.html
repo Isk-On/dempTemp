@@ -1,0 +1,111 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <meta name="viewport" content="width=device-width, user-scalable=no" />
+    <title>Pet Game</title>
+    <link rel="stylesheet" href="style.css" />
+  </head>
+  <body>
+    <h1>Pet Care Game</h1>
+    <div id="game-container">
+      <div id="pet-image-container">
+        <img id="pet-image" src="" alt="Pet Image" />
+      </div>
+
+      <div id="status">
+        <div class="status_info">
+          <p>Hunger:</p>
+          <div class="experience-loader">
+            <div class="circle hunger-bar" id="experienceCircle">
+              <div class="container"></div>
+              <div class="level-display hunger-level" id="levelDisplay">1</div>
+            </div>
+          </div>
+        </div>
+        <div class="status_info">
+          <p>Energy:</p>
+          <div class="experience-loader">
+            <div class="circle energy-bar" id="experienceCircle">
+              <div class="container"></div>
+              <div class="level-display energy-level" id="levelDisplay">1</div>
+            </div>
+          </div>
+        </div>
+        <div class="status_info">
+          <p>Mood:</p>
+          <div class="experience-loader">
+            <div class="circle mood-bar" id="experienceCircle">
+              <div class="container"></div>
+              <div class="level-display mood-level" id="levelDisplay">1</div>
+            </div>
+          </div>
+        </div>
+        <!-- Отображение валюты -->
+      </div>
+      <p class="currency-level">Currency: <span id="currency">0</span></p>
+      <button id="feed-button" class="feed main-btns" onclick="feedPet()">
+        Feed
+      </button>
+      <button id="play-button" class="play main-btns" onclick="playWithPet()">
+        Play
+      </button>
+      <button id="rest-button" class="rest main-btns" onclick="restPet()">
+        Rest
+      </button>
+
+      <h2>Tasks for Your Pet</h2>
+      <ul id="task-list"></ul>
+
+      <button onclick="toggleStore()">Open Pet Store</button>
+      <div id="pet-store" class="hidden">
+        <h2>Choose Your Pet</h2>
+        <div class="pet-options">
+          <img
+            class="pet-choice"
+            src="images/happy-penguin.webp"
+            alt="Penguin"
+            onclick="choosePet(0)"
+          />
+          <img
+            class="pet-choice"
+            src="images/cat/happy-cat.jpg"
+            alt="Cat"
+            onclick="choosePet(1)"
+          />
+          <img
+            class="pet-choice"
+            src="images/dog/happy-dog.webp"
+            alt="Dog"
+            onclick="choosePet(2)"
+          />
+        </div>
+      </div>
+
+      <button id="theme-toggle" onclick="toggleTheme()">
+        Switch to Light Theme
+      </button>
+    </div>
+
+    <!-- Модальное окно окончания игры -->
+    <div id="game-over-modal" class="modal hidden">
+      <div class="modal-content">
+        <h2>Game Over</h2>
+        <p>
+          Your pet is too tired, sad, or hungry. Please take better care next
+          time!
+        </p>
+        <button onclick="restartGame()">Restart Game</button>
+      </div>
+    </div>
+
+    <footer>
+      <p>Take care of your pet!</p>
+    </footer>
+
+    <script src="script.js"></script>
+    <script src="tasks.js"></script>
+    <!-- Добавляем файл tasks.js -->
+  </body>
+</html>
